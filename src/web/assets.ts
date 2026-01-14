@@ -1,1 +1,1 @@
-export const PROFILE_PIC = "/assets/profile-pic.jpg" as const;
+export { default as PROFILE_PIC } from "@assets/profile-pic.jpg?url";
