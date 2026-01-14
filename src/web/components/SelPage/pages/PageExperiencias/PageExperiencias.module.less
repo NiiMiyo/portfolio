@@ -1,0 +1,35 @@
+@import url(/src/styles/colors.less);
+@import url(../pages.module.less);
+
+.title {
+	.page-title();
+}
+
+.experiencia {
+	display: flex;
+	flex-direction: column;
+	padding: 0 .5rem;
+
+	&:not( :last-child ) {
+		border-bottom: 2px solid @color-primary;
+		padding-bottom: 1rem;
+	}
+
+	> :not( :last-child ) {
+		margin-bottom: .35rem;
+	}
+
+	.tipo {
+		font-size: 1.25rem;
+		font-weight: bold;
+	}
+
+	.tecnologias {
+		justify-content: start;
+	}
+}
+
+.experiencia + .experiencia {
+	margin-top: 1rem;
+}
+

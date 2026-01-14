@@ -1,0 +1,43 @@
+@import url(/src/styles/colors.less);
+@import url(/src/styles/sizing.less);
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	z-index: 999;
+	position: sticky;
+	top: 0;
+
+	width: @page_width;
+	padding: .5rem 0;
+
+	background-color: @color-primary;
+	color: @color-text-white;
+
+	border-bottom: solid 2px @color-primary-dark;
+
+	.button {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: .5em;
+
+		padding: .25rem 0;
+		width: 10em;
+
+		background: none;
+		border: none;
+
+		font-size: 1.5rem;
+		color: @color-text-white;
+
+		cursor: pointer;
+
+		&.selected {
+			border-bottom: solid 2px @color-text-white;
+		}
+	}
+}

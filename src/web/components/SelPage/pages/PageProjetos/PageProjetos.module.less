@@ -1,0 +1,81 @@
+@import url(/src/styles/colors.less);
+@import url(../pages.module.less);
+
+.title {
+	.page-title();
+}
+
+.projeto {
+	display: flex;
+	flex-direction: column;
+	padding: 0 .5rem;
+
+	&:not( :last-child ) {
+		border-bottom: 2px solid @color-primary;
+		padding-bottom: 1rem;
+	}
+
+	&[open] {
+		.marker {
+			rotate: 90deg;
+		}
+	}
+
+	> :not( :last-child ) {
+		margin-bottom: .35rem;
+	}
+
+	.nome {
+		font-size: 1.5rem;
+		font-weight: bold;
+		cursor: pointer;
+
+		display: flex;
+		align-items: center;
+		gap: .35rem;
+	}
+
+	.urls {
+		display: flex;
+		align-items: center;
+		gap: .5rem;
+
+		font-size: 1.25rem;
+
+		.url {
+			display: flex;
+			align-items: start;
+			justify-content: space-between;
+			gap: .35em;
+
+			font-size: 1rem;
+			text-decoration: none;
+			background-color: @color-primary;
+			color: @color-text-white;
+			font-weight: bold;
+
+			padding: .35em .45em;
+			border-radius: 5px;
+
+			&:hover {
+				background-color: @color-primary-light;
+			}
+		}
+	}
+
+	.tecnologias {
+		justify-content: start;
+	}
+
+	.descricao {
+		text-align: justify;
+
+		p + p {
+			margin-top: .5rem;
+		}
+	}
+}
+
+.projeto + .projeto {
+	margin-top: 1rem;
+}
