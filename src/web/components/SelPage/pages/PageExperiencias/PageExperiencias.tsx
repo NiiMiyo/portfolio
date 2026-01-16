@@ -23,7 +23,7 @@ function Experiencia( props: Readonly<{ experiencia: Experiencia }> ) {
 
 		<TechStack tecnologias={ tecnologias } wrapper={ { className: styles.tecnologias } } />
 
-		<div>
+		<div className={ styles.descricao }>
 			{ descricao }
 		</div>
 	</div>
