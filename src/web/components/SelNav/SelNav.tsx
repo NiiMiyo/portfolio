@@ -12,6 +12,10 @@ export function SelNav() {
 			<BootstrapIcon icon="person-workspace"/> Projetos
 		</SelNavButton>
 
+		<SelNavButton page="formações">
+			<BootstrapIcon icon="mortarboard-fill"/> Formações
+		</SelNavButton>
+
 		<SelNavButton page="experiências">
 			<BootstrapIcon icon="stars"/> Experiências
 		</SelNavButton>

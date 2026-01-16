@@ -4,4 +4,5 @@ declare type SelPageContextValue = Optional<{
 }>;
 
 declare type SelPagina = "projetos"
-	| "experiências";
+	| "experiências"
+	| "formações";
