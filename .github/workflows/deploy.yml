@@ -19,6 +19,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  server_base: ${{ vars.VITE_BASE || format( '/{0}', github.event.repository.name ) }}
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -49,7 +52,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base ${{ env.server_base }}
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
