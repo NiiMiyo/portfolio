@@ -1,0 +1,43 @@
+@import url(../pages.module.less);
+@import url(/src/styles/colors.less);
+
+.title {
+	.page-title();
+}
+
+.contatos {
+	display: flex;
+	flex-direction: column;
+
+	font-size: 2rem;
+
+	.contato {
+		display: flex;
+		align-items: center;
+		gap: .5em;
+		width: max-content;
+
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-decoration: none;
+		color: @color-primary-dark;
+
+		border-bottom: solid 2px @color-primary;
+
+		&:first-of-type {
+			margin-top: .25rem;
+		}
+
+		&:hover {
+			color: @color-primary;
+		}
+	}
+
+	.contato + .contato {
+		margin-top: 1rem;
+	}
+}
+
+.contatos + .contatos {
+	margin-top: 2rem;
+}

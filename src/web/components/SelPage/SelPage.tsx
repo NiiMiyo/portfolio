@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import SelPageContext from "@/web/contexts";
-import { PageExperiencias, PageFormacoes, PageProjetos } from "./pages";
+import { PageContatos, PageExperiencias, PageFormacoes, PageProjetos } from "./pages";
 
 import styles from "./SelPage.module.less";
 
@@ -16,7 +16,9 @@ export function SelPage() {
 				? <PageExperiencias />
 			: context.page === "formações"
 				? <PageFormacoes />
-				: <p>não implementado</p>
+			: context.page === "contato"
+				? <PageContatos />
+			: <p>não implementado</p>
 		}
 	</div>;
 }
