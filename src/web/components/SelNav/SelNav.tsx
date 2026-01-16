@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { Link, useLocation } from "react-router";
 
 import { BootstrapIcon } from "@/web/components";
-import SelPageContext from "@/web/contexts";
+import { PagesPath } from "@/config/RouterSettings";
 import { WebUtils } from "@/utils";
 
 import styles from "./SelNav.module.less";
@@ -27,14 +27,13 @@ export function SelNav() {
 }
 
 function SelNavButton( props: Readonly<SelNavButtonProps> ) {
-	const context = useContext( SelPageContext )!;
 	const { children, page } = props;
+	const location = useLocation();
 
-	return <button
-		type="button"
-		onClick={ function(){ context.setPage( page ) } }
-		className={ WebUtils.className( styles.button, context.page === page && styles.selected ) }
+	return <Link
+		to={ PagesPath[ page ] }
+		className={ WebUtils.className( styles.link, location.pathname === PagesPath[ page ] && styles.selected ) }
 	>
 		{ children }
-	</button>;
+	</Link>;
 }

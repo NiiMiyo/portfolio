@@ -7,7 +7,6 @@ export function PageContatos() {
 
 		<div className={ styles.contatos }>
 			Contatos
-			<Contato icon="whatsapp" link="https://wa.me/+5583982163668">WhatsApp: (83) 98216-3668</Contato>
 			<Contato icon="envelope-at-fill" link="mailto:selene.haruno.ss@gmail.com">Email: selene.haruno.ss@gmail.com</Contato>
 		</div>
 

@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
-import App from "@/App";
+import { SelRouter } from "@/config";
 
 import "@/styles/global.less";
 
 createRoot( document.querySelector( "body#app" )! )
-	.render( <App /> );
+	.render( <SelRouter /> );
