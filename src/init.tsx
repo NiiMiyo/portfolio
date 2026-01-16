@@ -3,5 +3,5 @@ import { SelRouter } from "@/config";
 
 import "@/styles/global.less";
 
-createRoot( document.querySelector( "body#app" )! )
+createRoot( document.querySelector( "#app" )! )
 	.render( <SelRouter /> );

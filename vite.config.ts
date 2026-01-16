@@ -7,6 +7,9 @@ export default defineConfig( env => ( {
 	publicDir: "public",
 	build: {
 		outDir: "dist",
+		rollupOptions: {
+			input: [ "index.html", "404.html" ],
+		},
 	},
 
 	plugins: [
