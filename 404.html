@@ -5,7 +5,7 @@
 </head>
 <body>
 	<script type="module">
-		globalThis.location.replace( location.protocol + "//" + location.host + import.meta.env.BASE_URL );
+		globalThis.location.replace( location.origin + import.meta.env.BASE_URL );
 	</script>
 
 	<noscript>
