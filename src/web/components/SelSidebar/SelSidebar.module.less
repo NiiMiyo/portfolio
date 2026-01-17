@@ -1,5 +1,6 @@
 @import url(/src/styles/colors.less);
 @import url(/src/styles/sizing.less);
+@import url(/src/styles/utils.less);
 
 .sidebar {
 	height: 100vh;
@@ -15,6 +16,17 @@
 	color: @color-text-white;
 	text-align: center;
 
+	@media @onMobile {
+		&:not( [ data-as-page ] ) {
+			display: none;
+		}
+
+		background: none;
+		color: @color-primary;
+		width: 100%;
+		height: max-content;
+	}
+
 	.profile_pic {
 		width: @profile_pic_size;
 		height: @profile_pic_size;
@@ -22,7 +34,7 @@
 		margin: 0 auto 1rem auto;
 
 		border-radius: 50%;
-		border: solid 10px @color-text-white;
+		border: solid 10px currentColor;
 	}
 
 	.nome {
@@ -60,6 +72,7 @@
 			background-color: @color-primary-light;
 			padding: .5rem;
 			border-radius: 5px;
+			color: @color-text-white;
 
 			p + p {
 				margin-top: .5em;

@@ -1,0 +1,36 @@
+@import url(/src/styles/colors.less);
+@import url(/src/styles/utils.less);
+
+.header {
+	@media @onDesktop {
+		display: none;
+	}
+
+	@nav_icon_size: 2rem;
+
+	display: grid;
+	align-items: center;
+	grid-template-columns: @nav_icon_size auto @nav_icon_size;
+
+	font-size: 2rem;
+	font-weight: bold;
+	color: @color-text-white;
+	text-align: center;
+
+	width: 100vw;
+	padding: .5rem;
+	background-color: @color-primary;
+
+	.nav_button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		color: inherit;
+		font-size: @nav_icon_size;
+
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+}

@@ -5,8 +5,6 @@ import styles from "./PageExperiencias.module.less";
 
 export function PageExperiencias() {
 	return <>
-		<div className={ styles.title }>Experiências</div>
-
 		<Experiencia experiencia={ universime } />
 		<Experiencia experiencia={ esig } />
 	</>;

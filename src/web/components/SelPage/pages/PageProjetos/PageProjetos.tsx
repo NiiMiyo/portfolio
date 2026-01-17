@@ -5,8 +5,6 @@ import styles from "./PageProjetos.module.less";
 
 export function PageProjetos() {
 	return <>
-		<div className={ styles.title }>Projetos</div>
-
 		<Projeto projeto={ universime } />
 		<Projeto projeto={ edoex } />
 		<Projeto projeto={ tetris } />

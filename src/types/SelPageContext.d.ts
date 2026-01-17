@@ -6,4 +6,11 @@ declare type SelPageContextValue = Optional<{
 declare type SelPagina = "projetos"
 	| "experiências"
 	| "formações"
-	| "contato";
+	| "contato"
+	| "sobre";
+
+declare type SelPath = "/projetos"
+	| "/formacoes"
+	| "/contato"
+	| "/experiencias"
+	| "/sobre";

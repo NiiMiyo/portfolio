@@ -1,39 +1,42 @@
 import { Link, useLocation } from "react-router";
 
 import { BootstrapIcon } from "@/web/components";
-import { PagesPath } from "@/config/RouterSettings";
+import { PagesPath, PagesTitle } from "@/config/RouterSettings";
 import { WebUtils } from "@/utils";
 
 import styles from "./SelNav.module.less";
 
+const selNavId = "sel_nav_very_unique_id";
+const selNavMobileAttr = "data-mobile-active";
+
 export function SelNav() {
-	return <div className={ styles.nav }>
-		<SelNavButton page="projetos">
-			<BootstrapIcon icon="person-workspace"/> Projetos
-		</SelNavButton>
-
-		<SelNavButton page="formações">
-			<BootstrapIcon icon="mortarboard-fill"/> Formações
-		</SelNavButton>
-
-		<SelNavButton page="experiências">
-			<BootstrapIcon icon="stars"/> Experiências
-		</SelNavButton>
-
-		<SelNavButton page="contato">
-			<BootstrapIcon icon="person-lines-fill"/> Contato
-		</SelNavButton>
+	return <div className={ styles.nav } id={ selNavId }>
+		<SelNavButton page="sobre"        icon="person-lines-fill" className={ styles.sobre } />
+		<SelNavButton page="projetos"     icon="person-workspace" />
+		<SelNavButton page="formações"    icon="mortarboard-fill" />
+		<SelNavButton page="experiências" icon="stars" />
+		<SelNavButton page="contato"      icon="person-lines-fill" />
 	</div>;
 }
 
 function SelNavButton( props: Readonly<SelNavButtonProps> ) {
-	const { children, page } = props;
+	const { page, icon, className, ...link } = props;
 	const location = useLocation();
 
 	return <Link
+		{ ...link }
 		to={ PagesPath[ page ] }
-		className={ WebUtils.className( styles.link, location.pathname === PagesPath[ page ] && styles.selected ) }
+		className={ WebUtils.className( styles.link, className, location.pathname === PagesPath[ page ] && styles.selected ) }
+		onClick={ deactivateSelNavMobile }
 	>
-		{ children }
+		<BootstrapIcon icon={ icon } /> { PagesTitle[ PagesPath[ page ] ] }
 	</Link>;
+}
+
+export function activateSelNavMobile() {
+	document.getElementById( selNavId )?.setAttribute( selNavMobileAttr, "" );
+}
+
+export function deactivateSelNavMobile() {
+	document.getElementById( selNavId )?.removeAttribute( selNavMobileAttr );
 }

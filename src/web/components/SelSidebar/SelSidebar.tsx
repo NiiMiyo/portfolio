@@ -1,12 +1,16 @@
 import { BootstrapIcon, TechStack } from "@/web/components";
 
 import { PROFILE_PIC } from "@/web/assets";
+import { WebUtils } from "@/utils";
+
 import styles from "./SelSidebar.module.less";
 
 
 export default SelSidebar;
-export function SelSidebar() {
-	return <div className={ styles.sidebar }>
+export function SelSidebar( props: Readonly<SelSidebarProps> ) {
+	const { className, ...sidebarProps } = props;
+
+	return <div { ...sidebarProps } className={ WebUtils.className( styles.sidebar, className ) }>
 		<img src={ PROFILE_PIC } alt="" className={ styles.profile_pic } />
 		<div className={ styles.nome }>Selene Haruno<br/>Silva dos Santos</div>
 

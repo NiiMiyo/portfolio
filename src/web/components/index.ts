@@ -3,3 +3,4 @@ export * from "./BootstrapIcon"
 export * from "./SelPage"
 export * from "./SelNav"
 export * from "./TechStack";
+export * from "./SelMobileHeader";

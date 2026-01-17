@@ -1,8 +1,24 @@
 @import url(/src/styles/colors.less);
 @import url(/src/styles/sizing.less);
+@import url(/src/styles/utils.less);
 
 .page {
 	overflow: auto;
 	width: @page_width;
 	padding: 1rem;
+
+	@media @onMobile {
+		width: 100vw;
+	}
+
+	.title {
+		color: @color-primary;
+		font-size: 3rem;
+		font-weight: bold;
+		text-align: center;
+
+		@media @onMobile {
+			display: none;
+		}
+	}
 }

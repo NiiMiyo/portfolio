@@ -3,11 +3,9 @@ import styles from "./PageContatos.module.less";
 
 export function PageContatos() {
 	return <>
-		<div className={ styles.title }>Contato</div>
-
 		<div className={ styles.contatos }>
 			Contatos
-			<Contato icon="envelope-at-fill" link="mailto:selene.haruno.ss@gmail.com">Email: selene.haruno.ss@gmail.com</Contato>
+			<Contato icon="envelope-at-fill" link="mailto:selene.haruno.ss@gmail.com">selene.haruno.ss@gmail.com</Contato>
 		</div>
 
 		<div className={ styles.contatos }>

@@ -1,4 +1,4 @@
-import { SelPage, SelNav, SelSidebar } from "@/web/components";
+import { SelPage, SelNav, SelSidebar, SelMobileHeader } from "@/web/components";
 
 export default App;
 export function App() {
@@ -6,6 +6,7 @@ export function App() {
 		<SelSidebar />
 		<div style={ { overflowY: "scroll", overflowX: "clip" } }>
 			<SelNav />
+			<SelMobileHeader />
 			<SelPage />
 		</div>
 	</>;

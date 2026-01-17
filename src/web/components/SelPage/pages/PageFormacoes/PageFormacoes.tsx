@@ -3,8 +3,6 @@ import styles from "./PageFormacoes.module.less";
 
 export function PageFormacoes() {
 	return <>
-		<div className={ styles.title }>Formações</div>
-
 		<Formacao formacao={ graduacao_lcc } />
 		<Formacao formacao={ libras_intermediario } />
 	</>;

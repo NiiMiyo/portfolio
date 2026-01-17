@@ -1,14 +1,24 @@
 import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 
 import App from "@/App";
-import { PageContatos, PageExperiencias, PageFormacoes, PageProjetos } from "@/web/components/SelPage/pages";
+import { PageContatos, PageExperiencias, PageFormacoes, PageProjetos, PageSobre } from "@/web/components/SelPage/pages";
+import { isOnMobile } from "@/utils/web";
 
-export const PagesPath: Record<SelPagina, string> = {
+export const PagesPath: Record<SelPagina, SelPath> = {
 	projetos: "/projetos",
 	formações: "/formacoes",
 	contato: "/contato",
 	experiências: "/experiencias",
+	sobre: "/sobre",
 } as const;
+
+export const PagesTitle: Record<SelPath, string> = {
+	"/projetos": "Projetos",
+	"/formacoes": "Formações",
+	"/contato": "Contato",
+	"/experiencias": "Experiências",
+	"/sobre": "Sobre mim",
+};
 
 export function SelRouter() {
 	return <RouterProvider
@@ -21,6 +31,10 @@ export function SelRouter() {
 					{
 						Component: PageNotFound,
 						path: "/",
+					},
+					{
+						Component: PageSobre,
+						path: PagesPath.sobre,
 					},
 					{
 						Component: PageProjetos,
@@ -47,5 +61,5 @@ export function SelRouter() {
 export default SelRouter;
 
 function PageNotFound() {
-	return <Navigate to={ PagesPath.projetos } />;
+	return <Navigate to={ isOnMobile() ? PagesPath.sobre : PagesPath.projetos } />;
 }
