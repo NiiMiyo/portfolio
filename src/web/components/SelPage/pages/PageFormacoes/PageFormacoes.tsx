@@ -15,7 +15,7 @@ function Formacao( props: Readonly<{ formacao: Formacao }> ) {
 
 	return <div className={ styles.formacao }>
 		<div>
-			<div className={ styles.tipo }>{ tipo } em {curso}</div>
+			<div className={ styles.tipo }>{ tipo } – {curso}</div>
 			<div>{ local }, de { inicio } a {fim}</div>
 		</div>
 
