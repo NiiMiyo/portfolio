@@ -8,13 +8,13 @@ export function PageSobre() {
 	const navigate = useNavigate();
 
 	useEffect( () => {
-		function handleResize( event: UIEvent ) {
+		function handleResize() {
 			if ( !isOnMobile() )
 				navigate( "/" );
 		}
 
+		handleResize();
 		globalThis.addEventListener( "resize", handleResize );
-
 		return () => {
 			globalThis.removeEventListener( "resize", handleResize );
 		};
