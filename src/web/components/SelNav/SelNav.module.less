@@ -17,7 +17,11 @@
 	background-color: @color-primary;
 	color: @color-text-white;
 
-	border-bottom: solid 2px @color-primary-dark;
+	@nav_border: solid 2px @color-primary-dark;
+
+	@media @onDesktop {
+		border-bottom: @nav_border;
+	}
 
 	@media @onMobile {
 		&:not( [data-mobile-active] ) {
@@ -33,6 +37,8 @@
 		height: 100vh;
 
 		position: absolute;
+		left: 0;
+		border-right: @nav_border;
 
 		.link {
 			background-color: @color-primary-light;
