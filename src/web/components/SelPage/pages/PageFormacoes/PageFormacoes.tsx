@@ -1,4 +1,4 @@
-import { graduacao_lcc } from "@/data/formacoes";
+import { graduacao_lcc, libras_intermediario } from "@/data/formacoes";
 import styles from "./PageFormacoes.module.less";
 
 export function PageFormacoes() {
@@ -6,6 +6,7 @@ export function PageFormacoes() {
 		<div className={ styles.title }>Formações</div>
 
 		<Formacao formacao={ graduacao_lcc } />
+		<Formacao formacao={ libras_intermediario } />
 	</>;
 }
 
