@@ -16,11 +16,10 @@ export function PageProjetos() {
 function Projeto( props: Readonly<{ projeto: Projeto }> ) {
 	const { nome, descricao, tecnologias, urls } = props.projeto;
 
-	return <details className={ styles.projeto } open>
-		<summary className={ styles.nome }>
-			<BootstrapIcon icon="chevron-right" className={ styles.marker } />
+	return <div className={ styles.projeto }>
+		<div className={ styles.nome }>
 			{ nome }
-		</summary>
+		</div>
 
 		<TechStack
 			tecnologias={ tecnologias }
@@ -37,5 +36,5 @@ function Projeto( props: Readonly<{ projeto: Projeto }> ) {
 				<BootstrapIcon icon={ u.bsIcon ?? "box-arrow-up-right" } /> { u.nome }
 			</a> ) }
 		</div>
-	</details>;
+	</div>;
 }
