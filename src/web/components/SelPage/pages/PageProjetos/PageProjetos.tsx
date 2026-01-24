@@ -1,9 +1,12 @@
 import { edoex, tetris, universime } from "@/data/projetos";
 import { BootstrapIcon, TechStack } from "@/web/components";
+import { useSetPageTitle } from "@/web/hooks";
 
 import styles from "./PageProjetos.module.less";
 
 export function PageProjetos() {
+	useSetPageTitle( "Projetos" );
+
 	return <>
 		<Projeto projeto={ universime } />
 		<Projeto projeto={ edoex } />

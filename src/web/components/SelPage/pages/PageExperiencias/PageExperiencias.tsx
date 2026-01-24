@@ -1,9 +1,12 @@
 import { TechStack } from "@/web/components";
 import { esig, universime } from "@/data/experiencias";
+import { useSetPageTitle } from "@/web/hooks";
 
 import styles from "./PageExperiencias.module.less";
 
 export function PageExperiencias() {
+	useSetPageTitle( "Experiências" );
+
 	return <>
 		<Experiencia experiencia={ universime } />
 		<Experiencia experiencia={ esig } />

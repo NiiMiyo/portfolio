@@ -1,7 +1,10 @@
 import { graduacao_lcc, libras_intermediario } from "@/data/formacoes";
+import { useSetPageTitle } from "@/web/hooks";
 import styles from "./PageFormacoes.module.less";
 
 export function PageFormacoes() {
+	useSetPageTitle( "Formações" );
+
 	return <>
 		<Formacao formacao={ graduacao_lcc } />
 		<Formacao formacao={ libras_intermediario } />

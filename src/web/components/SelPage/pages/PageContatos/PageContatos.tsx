@@ -1,7 +1,10 @@
 import { BootstrapIcon } from "@/web/components";
+import { useSetPageTitle } from "@/web/hooks";
 import styles from "./PageContatos.module.less";
 
 export function PageContatos() {
+	useSetPageTitle( "Contatos" );
+
 	return <>
 		<div className={ styles.contatos }>
 			Contatos
