@@ -1,4 +1,4 @@
-import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
 import App from "@/App";
 import { PageContatos, PageExperiencias, PageFormacoes, PageProjetos, PageSobre } from "@/web/components/SelPage/pages";
@@ -22,7 +22,7 @@ export const PagesTitle: Record<SelPath, string> = {
 
 export function SelRouter() {
 	return <RouterProvider
-		router={ createHashRouter( [
+		router={ createBrowserRouter( [
 			{
 				path: "/",
 				Component: App,
